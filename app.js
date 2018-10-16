@@ -12,7 +12,11 @@ let l = new loaders({
   path: __dirname + '/middlewares'
 });
 
-l.use(['koa-bodyparser','koa-static','routes']).run(app);
+l.use([
+'connect-mongo',
+'koa-bodyparser',
+'koa-static',
+'routes']).run(app);
 
 // process.env.PORT 在window下使用set设置环境变量
 let port = process.env.PORT || 3000;

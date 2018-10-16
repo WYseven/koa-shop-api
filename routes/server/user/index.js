@@ -14,6 +14,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 module.exports = (router) => {
+  // 上传图片
   router.post('/upload', upload.single('file'),(ctx) => {
     //console.log(ctx.req.body); // 存放的是form-data格式数据，由koa-multer库提供
     //console.log(ctx.requset.body); // 存放的是post发送的数据，Koa提供
