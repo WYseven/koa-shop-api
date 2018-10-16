@@ -1,0 +1,24 @@
+{
+  "name": "koa-tt",
+  "version": "1.0.0",
+  "description": "基于koa的商城后端接口",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "koa": "^2.5.3",
+    "koa-body": "^4.0.4",
+    "koa-multer": "^1.0.2",
+    "koa-router": "^7.4.0",
+    "koa-views": "^6.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "wangyun:WYseven/koa-shop-api.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

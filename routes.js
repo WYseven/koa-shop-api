@@ -1,4 +1,5 @@
 module.exports = {
-  '/': 'index',
-  '/user': 'user'
+  '/': 'web',
+  '/api/user': 'server/user',
+  '/api/hello': 'server/'
 }
