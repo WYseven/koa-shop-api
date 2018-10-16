@@ -36,7 +36,7 @@ class Loader {
     return this;
   }
 
-  init(app){
+  run(app){
     // 每一个中间件都会接受app
     for(let item of this.middlewares){
       let func = require(item);

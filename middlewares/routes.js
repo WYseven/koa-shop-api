@@ -18,7 +18,7 @@ for (let key in routesConfig) {
   }
 }
 let isloading = false;
-module.exports = (ctx,next) => {
+module.exports = async (ctx,next) => {
   // 只需要一次加载一次
   if (!isloading){
     ctx.app
@@ -27,5 +27,5 @@ module.exports = (ctx,next) => {
     isloading = true;
   }
   
-  next();
+  await next();
 }
