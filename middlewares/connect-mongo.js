@@ -1,14 +1,13 @@
 const {db} = require('../config');
 const dbUrl = `${db.url}:${db.port}/${db.dbname}`
 var mongoose = require('mongoose');
-mongoose.connect(dbUrl, { useNewUrlParser: true });
 
-module.exports = (ctx,next) => {
+module.exports = (() => {
+  mongoose.connect(dbUrl, { useNewUrlParser: true });
   var db = mongoose.connection;
-  db.on('error', console.error.bind(console, 'connection error:'));
+  db.on('error', console.error.bind(console, '123connection error:'));
   db.once('open', async function () {
-    // we're connected!
-    console.log(`we're connected!`)
-    await next();
+    console.log(`we're connected!`);
   });
-}
+  return null;
+})()

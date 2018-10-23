@@ -11,7 +11,7 @@ app.context.rootPath = __dirname;
 let l = new loaders({
   path: __dirname + '/middlewares'
 });
-
+console.log(123)
 l.use([
 'connect-mongo',
 'koa-bodyparser',
