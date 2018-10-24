@@ -2,6 +2,14 @@
 // 需要加载一些中间件
 const koa = require('koa');
 const app = new koa();
+
+// 加载中间件
+let middlewares = require('./middlewares')
+
+for(let attr in middlewares){
+  middlewares[attr](app);
+}
+
 // 加载所需要的中间件
 let loaders = require('./utils/loader');
 

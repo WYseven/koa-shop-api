@@ -3,6 +3,12 @@ module.exports = (router) => {
   // 发表文章
   router
     .post('/', async (ctx) => {
+
+      // 拿到session  
+      console.log(ctx.cookies.get('koa:session'))
+      console.log(ctx.cookies.get('koa:session.sig'))
+      console.log(ctx.session)
+
       let { body } = ctx.request;
       let data = await postService.addPost(body);
       ctx.body = {

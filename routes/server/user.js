@@ -56,14 +56,18 @@ module.exports = (router) => {
     let resData = {
       msg: '登录成功',
       code: 0
-    }
-    console.log(data)
+    };
+
     if (!data.isExit || !data.isCompare){
       resData = {
         msg: '用户名或密码出现错误',
         code: 1
       }
     }
+
+    // 存入session中
+    ctx.session.user = data.name;
+
     ctx.body = resData;
   })
 
