@@ -7,22 +7,25 @@ let loaders = require('./utils/loader');
 
 // 记录root路径
 app.context.rootPath = __dirname;
+global.rootPath = __dirname;
+
 
 let l = new loaders({
   path: __dirname + '/middlewares'
 });
-console.log(123)
+
 l.use([
-'connect-mongo',
-'koa-bodyparser',
-'koa-static',
-'routes']).run(app);
+  'error',
+  'connect-mongo',
+  'koa-bodyparser',
+  'koa-static',
+  'routes']).run(app);
 
 // process.env.PORT 在window下使用set设置环境变量
 let port = process.env.PORT || 3000;
 
-app.on('error',(e) => {
-  console.log(e)
+app.on('error',(e,ctx) => {
+  console.log('捕获到错误',e)
 })
 
 app.listen(port,() =>{
